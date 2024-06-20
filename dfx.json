@@ -16,6 +16,9 @@
       "candid": "src/sandbox_backend/sandbox_backend.did",
       "gzip": true,
       "main": "src/sandbox_backend/src/index.ts",
+      "dependencies": [
+        "nft"
+      ],
       "tech_stack": {
         "cdk": {
           "azle": {}
@@ -28,6 +31,23 @@
       "type": "custom",
       "wasm": ".azle/sandbox_backend/sandbox_backend.wasm"
     },
+    "nft": {
+      "build": "npx azle nft",
+      "candid": "src/nft/nft.did",
+      "gzip": true,
+      "main": "src/nft/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/nft/nft.wasm"
+    },
     "sandbox_frontend": {
       "dependencies": [
         "sandbox_backend"
@@ -39,12 +59,7 @@
       "workspace": "sandbox_frontend"
     }
   },
-  "defaults": {
-    "build": {
-      "args": "",
-      "packtool": ""
-    }
-  },
+
   "output_env_file": ".env",
   "version": 1
 }
